@@ -412,9 +412,11 @@ void main_loop_function()
     float minusAngle = fractalMap[fractal].MinusAngle();
     float plusAngle = fractalMap[fractal].PlusAngle();
     float K = fractalMap[fractal].K();
+    glColor4f(1, 0, 0, 1);
+    Text(vertex2<float>(-1.5, -2), "+/- to change fractal   [1-9] to change recursion depth     q to exit");
     glColor4f(0, 1, 0, 1);
-    Text(vertex2<float>(0, -2), FractalName(fractal));
-    Text(vertex2<float>(0, 1.9), string("Level ") + (char)(((int)level)+'0'));
+    Text(vertex2<float>(-1, 1.9), FractalName(fractal));
+    Text(vertex2<float>(1, 1.9), string("Level ") + (char)(((int)level)+'0'));
     glColor4f(0, 0, 1, 1);
     WalkLSystem(walkRule, walk * (float)(pow(K, level)),
 		minusAngle, plusAngle);
